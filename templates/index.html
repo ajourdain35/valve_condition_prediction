@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction de la condition de la valve</title>
+</head>
+<body>
+    <h1>Prédiction de la condition de la valve</h1>
+    
+    <form method="POST">
+        <label for="training_samples">Nombre d'exemples d'apprentissage :</label>
+        <input type="number" id="training_samples" name="training_samples" required>
+        <button type="submit">Prédire</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Fiabilité pour {{ training_samples }} exemples d'apprentissage :</h2>
+        <p>{{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
